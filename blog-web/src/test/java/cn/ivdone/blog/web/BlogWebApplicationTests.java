@@ -32,4 +32,10 @@ class BlogWebApplicationTests {
        System.out.println(users.size());
     }
 
+    @Test
+    void selectOne(){
+        User user = userMapper.findByUsername("xy") ;
+        System.out.println(JSON.toJSONString(user));
+    }
+
 }
