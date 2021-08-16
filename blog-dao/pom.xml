@@ -36,6 +36,10 @@
       <groupId>cn.ivdone.blog</groupId>
       <artifactId>blog-common</artifactId>
     </dependency>
+    <dependency>
+      <groupId>mysql</groupId>
+      <artifactId>mysql-connector-java</artifactId>
+    </dependency>
   </dependencies>
 
 

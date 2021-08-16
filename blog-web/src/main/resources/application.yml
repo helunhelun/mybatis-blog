@@ -1,0 +1,13 @@
+server:
+  address: localhost
+  port: 8000
+
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://211.81.51.136:1234/blog_db?characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2b8
+    username: helun
+    password: helun520
+
+
