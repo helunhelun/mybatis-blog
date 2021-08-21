@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+
+<mapper namespace="cn.ivdone.blog.dao.mapper.ArticleMapper">
+
+    <resultMap id="detailedBlogResultMap" type="Article">
+        <id property="id" column="id" />
+        <result property="post_id" column="post_id" />
+        <result property="views" column="views" />
+        <result property="like" column="like" />
+        <result property="title" column="title" />
+        <result property="summary" column="summary" />
+        <result property="body" column="body" />
+        <result property="createTime" column="create_time" />
+        <result property="modifyTime" column="modify_time" />
+        <result property="status" column="status" />
+
+        <association property="user" javaType="User">
+            <id property="id" column="id" />
+            <result property="username" column="username" />
+            <result property="nickname" column="nickname" />
+            <result property="is_active" column="is_active" />
+            <result property="is_stuff" column="is_stuff" />
+            <result property="firstname" column="firstname" />
+            <result property="lastname" column="lastname" />
+            <result property="email" column="email" />
+            <result property="create_time" column="create_time" />
+        </association>
+    </resultMap>
+
+    <select id="findByPostId" resultMap="detailedBlogResultMap">
+    SELECT * FROM blog_article a INNER JOIN blog_user u ON a.user_id=u.id WHERE post_id=#{postId}
+    </select>
+</mapper>

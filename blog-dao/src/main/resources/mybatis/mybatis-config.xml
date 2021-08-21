@@ -29,6 +29,7 @@
 
     <mappers>
         <mapper resource="mybatis/mapper/userMapper.xml"/>
+        <mapper resource="mybatis/mapper/articleMapper.xml" />
     </mappers>
 
 </configuration>
