@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.annotation.ComponentScan;
 
+import java.util.Date;
 import java.util.List;
 
 @SpringBootTest
@@ -50,8 +51,34 @@ class BlogWebApplicationTests {
 
     @Test
     void selectArticleByPostId(){
-        Article article = articleMapper.findByPostId(24L) ;
+        Article article = articleMapper.findByPostId(1000L) ;
         System.out.println(JSON.toJSONString(article));
+    }
+
+    @Test
+    void insertArticle(){
+        Article article = new Article() ;
+        User user = userMapper.findByUsername("losha") ;
+//        User user = new User() ;
+//        user.set_active(true);
+//        user.set_stuff(true);
+//        user.setEmail("helun@tju.edu.cn");
+//        user.setFirstname("he");
+//        user.setUsername("lunlun");
+//        user.setNickname("论论");
+//        user.setPassword("123");
+        article.setBody("test-body");
+        // article.setLike(1L);
+        article.setCreateTime(new Date());
+        article.setModifyTime(new Date());
+        article.setPost_id(1000L);
+        article.setTitle("hello");
+        article.setSummary("test-summary");
+        article.setViews(100L);
+        article.setStatus("p");
+        article.setUser(user);
+
+        articleMapper.insertArticle(article) ;
     }
 
 }

@@ -6,4 +6,6 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 public interface ArticleMapper extends BaseMapper<Article> {
 
     Article findByPostId(Long postId) ;
+
+    void insertArticle(Article article) ;
 }

@@ -33,6 +33,11 @@
     </resultMap>
 
     <select id="findByPostId" resultMap="detailedBlogResultMap">
-    SELECT * FROM blog_article a INNER JOIN blog_user u ON a.user_id=u.id WHERE post_id=#{postId}
+        SELECT * FROM blog_article a INNER JOIN blog_user u ON a.user_id=u.id WHERE post_id=#{postId}
     </select>
+
+    <insert id="insertArticle" parameterType="Article">
+        INSERT INTO blog_article (id, post_id, views, title, summary, body, create_time, modify_time, status, user_id)
+        VALUES (#{id}, #{post_id}, #{views}, #{title}, #{summary}, #{body}, #{createTime}, #{modifyTime}, #{status}, #{user.id})
+    </insert>
 </mapper>
