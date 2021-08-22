@@ -12,7 +12,7 @@ import java.util.Date;
 @TableName("blog_article")
 public class Article {
 
-    //@TableId(type = IdType.AUTO)
+    @TableId(type = IdType.AUTO)
     private Long id ;
 
     private Long post_id ;
