@@ -36,7 +36,7 @@
         SELECT * FROM blog_article a INNER JOIN blog_user u ON a.user_id=u.id WHERE post_id=#{postId}
     </select>
 
-    <insert id="insertArticle" parameterType="Article">
+    <insert id="insertArticle" parameterType="Article" useGeneratedKeys="false">
         INSERT INTO blog_article (post_id, views, title, summary, body, create_time, modify_time, status, user_id)
         VALUES (#{post_id}, #{views}, #{title}, #{summary}, #{body}, #{createTime}, #{modifyTime}, #{status}, #{user.id})
     </insert>

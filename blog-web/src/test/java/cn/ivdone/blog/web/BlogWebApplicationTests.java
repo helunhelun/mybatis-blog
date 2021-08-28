@@ -1,8 +1,10 @@
 package cn.ivdone.blog.web;
 
 import cn.ivdone.blog.dao.entity.Article;
+import cn.ivdone.blog.dao.entity.Category;
 import cn.ivdone.blog.dao.entity.User;
 import cn.ivdone.blog.dao.mapper.ArticleMapper;
+import cn.ivdone.blog.dao.mapper.CategoryMapper;
 import cn.ivdone.blog.dao.mapper.UserMapper;
 import com.alibaba.fastjson.JSON;
 import org.junit.jupiter.api.Test;
@@ -27,6 +29,9 @@ class BlogWebApplicationTests {
 
     @Autowired
     private ArticleMapper articleMapper ;
+
+    @Autowired
+    private CategoryMapper categoryMapper ;
 
     @Test
     void contextLoads() {
@@ -79,6 +84,18 @@ class BlogWebApplicationTests {
         article.setUser(user);
 
         articleMapper.insertArticle(article) ;
+    }
+
+    @Test
+    void selectByCategoryName(){
+        //Category category = categoryMapper.findByName("springboot") ;
+
+        Category category = new Category() ;
+        category.setName("linux");
+
+        categoryMapper.insertCategory(category);
+
+        System.out.println(JSON.toJSONString(category));
     }
 
 }

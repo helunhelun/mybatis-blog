@@ -25,11 +25,13 @@
     <typeAliases>
         <typeAlias type="cn.ivdone.blog.dao.entity.User" alias="User" />
         <typeAlias type="cn.ivdone.blog.dao.entity.Article" alias="Article" />
+        <typeAlias type="cn.ivdone.blog.dao.entity.Category" alias="Category" />
     </typeAliases>
 
     <mappers>
         <mapper resource="mybatis/mapper/userMapper.xml"/>
         <mapper resource="mybatis/mapper/articleMapper.xml" />
+        <mapper resource="mybatis/mapper/categoryMapper.xml" />
     </mappers>
 
 </configuration>

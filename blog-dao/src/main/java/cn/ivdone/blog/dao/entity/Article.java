@@ -7,6 +7,7 @@ import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 
 import java.util.Date;
+import java.util.List;
 
 @Data
 @TableName("blog_article")
@@ -34,10 +35,15 @@ public class Article {
     private String status ;
 
     /**
-     * 文章作者
+     * 文章作者 多对一
      */
     private User user ;
 
     private Long user_id ;
+
+    /**
+     * 多对多
+     */
+    private List<Category> categories ;
 
 }
